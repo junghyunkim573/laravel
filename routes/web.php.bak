@@ -12,13 +12,6 @@
 */
 
 
-Route::get('/', [
-	'as'=>'kim',
-	function () {
-    return '제이름은 "kim" 입니다';
-}
-]);
-
-Route::get('/kim',function(){
-	return redirect(route('kim'));
-});
+Route::get('/{foo?}/profile', function ($foo='bar') {
+    return $foo;
+})->where('foo','[0-9a-zA-Z]{3}');
