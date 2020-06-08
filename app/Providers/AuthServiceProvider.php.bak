@@ -31,7 +31,7 @@ class AuthServiceProvider extends ServiceProvider
 	public function register()
 	{
 		$this->app->singleton(Optimus::class, function(){
-			return new Optimus(182961291,1384265379,30817169);
+			return now Optimus(182961291,1384265379,30817169);
 		});
 	}
 }
