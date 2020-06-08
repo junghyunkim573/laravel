@@ -12,6 +12,8 @@
 */
 
 
-Route::get('/{foo?}/profile', function ($foo='bar') {
-    return $foo;
-})->where('foo','[0-9a-zA-Z]{3}');
+Route::get('/', function () {
+    return view('welcome')->with('name','foo');
+});
+
+

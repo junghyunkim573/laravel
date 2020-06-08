@@ -1,1 +1,1 @@
-<h1>Hellow Laravel</h1>
+<h1><?= isset($greeting) ? "{$greeting}" : 'hellow'; ?><?= $name; ?></h1>

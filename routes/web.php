@@ -12,13 +12,11 @@
 */
 
 
-Route::get('/', [
-	'as'=>'kim',
-	function () {
-    return '제이름은 "kim" 입니다';
-}
-]);
-
-Route::get('/kim',function(){
-	return redirect(route('kim'));
+Route::get('/', function () {
+    return view('welcome')->with([
+	'name'=>'foo',
+	'greeting'=>'안녕하세요?',
+		]);
 });
+
+
