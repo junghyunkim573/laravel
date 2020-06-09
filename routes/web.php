@@ -12,10 +12,8 @@
 */
 
 
-Route::get('/', function () {
-	$items=['apple','banana','tomato'];
+Route::get('/','welcomecontroller@index');
 
-    return view('welcome',['items'=>$items]);
-});
+Route::resource('articles','articlescontroller');
 
 
