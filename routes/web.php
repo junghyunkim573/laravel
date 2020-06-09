@@ -13,10 +13,9 @@
 
 
 Route::get('/', function () {
-    return view('welcome')->with([
-	'name'=>'foo',
-	'greeting'=>'안녕하세요?',
-		]);
+	$items=['apple','banana','tomato'];
+
+    return view('welcome',['items'=>$items]);
 });
 
 
