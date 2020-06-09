@@ -1,0 +1,20 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class usertableseeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        App\user::create([
+			'name'=>sprintf('%s %s', str_random(3), str_random(4)),
+			'email'=>str_random(10) . '@example.com',
+			'password'=>bcrypt('password'),
+			]);
+    }
+}

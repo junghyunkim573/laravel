@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
 		}
 		
 		App\User::truncate();
-		$this->call(usertableseeder::class);
+		$this->call(userstableseeder::class);
 
 		App\article::truncate();
 		$this->call(articlestableseeder::class);

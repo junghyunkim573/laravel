@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\article::class, function (Faker\Generator $faker){
-	$date=$faker->dateTimeThisMonth;
+	$data=$faker->dateTimeThisMonth;
 
 	return[
 		'title'=>$faker->sentence(),
