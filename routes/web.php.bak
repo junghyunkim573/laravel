@@ -27,15 +27,9 @@ Route::get('auth/login',function(){
 	return redirect('protected');
 });
 
-Route::get('protected',function(){
-	dump(session()->all());
-
-	if(! auth()->check()){
-		return '누구세요?';
-	}
-
-	return '어서오세요' . auth()->user()->name;
-});
+Route::get('protected',['middleware'=>'auth',function(){
+	
+}]);
 
 Route::get('auth/logout',function(){
 	auth()->logout();
@@ -45,3 +39,13 @@ Route::get('auth/logout',function(){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('articles','articlescontroller');
+
+DB::listen(function($query){
+	var_dump($query->sql);
+});
